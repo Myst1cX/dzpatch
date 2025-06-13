@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        dzunlock patch
+// @name        dzunlock
 // @namespace   https://uhwotgit.fly.dev/uhwot/dzunlock
 // @description Removes advertisements, unlocks streaming the full song length, enables Deezer Hi-Fi features
 // @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (fixed the script)
