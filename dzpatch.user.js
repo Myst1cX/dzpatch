@@ -5,8 +5,10 @@
 // @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (fixed the script)
 // @version     1.4.6
 // @license     GPL-3.0-only
-// @homepageURL https://github.com/Myst1cX/dzpatch/raw/branch/master/dzpatch.user.js
-// @downloadURL https://github.com/Myst1cX/dzpatch/raw/branch/master/dzpatch.user.js
+// @homepageURL https://github.com/Myst1cX/dzpatch
+// @supportURL  https://github.com/Myst1cX/dzpatch/issues
+// @updateURL   https://raw.githubusercontent.com/Myst1cX/dzpatch/main/dzpatch.user.js
+// @downloadURL https://raw.githubusercontent.com/Myst1cX/dzpatch/main/dzpatch.user.js
 // @icon        https://cdns-files.dzcdn.net/cache/images/common/favicon/favicon-96x96.852baf648e79894b668670e115e4a375.png
 // @include     /^https:\/\/www\.deezer\.com\/[a-z]{2}\/($|track|album|artist|playlist|episode|show|profile|channels|podcasts|radio|\?|#)/
 // @match       https://www.deezer.com/search/*
@@ -220,3 +222,4 @@ unsafeWindow.fetch = (function (fetch) {
         return resp
     };
 })(unsafeWindow.fetch);
+
