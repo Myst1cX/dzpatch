@@ -222,4 +222,3 @@ unsafeWindow.fetch = (function (fetch) {
         return resp
     };
 })(unsafeWindow.fetch);
-
