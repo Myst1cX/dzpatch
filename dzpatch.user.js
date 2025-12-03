@@ -2,8 +2,8 @@
 // @name        dzunlock
 // @namespace   https://uhwotgit.fly.dev/uhwot/dzunlock
 // @description Removes advertisements, unlocks streaming the full song length, enables Deezer Hi-Fi features
-// @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (fixed the script)
-// @version     1.4.6
+// @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (replaced media server link)
+// @version     1.4.6+
 // @license     GPL-3.0-only
 // @homepageURL https://github.com/Myst1cX/dzpatch
 // @supportURL  https://github.com/Myst1cX/dzpatch/issues
@@ -19,6 +19,7 @@
 // @grant       GM_getValue
 // @run-at      document-start
 // ==/UserScript==
+
 
 const debug = false
 
@@ -187,7 +188,7 @@ unsafeWindow.fetch = (function (fetch) {
         let resp = await fetch(url, init)
 
         if (url.startsWith('https://www.deezer.com/ajax/gw-light.php?method=deezer.getUserData')) {
-            let json = await resp.json()
+            const json = await resp.json()
 
             // removes upgrade popup stuff
             json.results.USER.ENTRYPOINTS = {}
@@ -203,7 +204,7 @@ unsafeWindow.fetch = (function (fetch) {
 
             resp = new Response(JSON.stringify(json), resp)
         } else if (url.startsWith('https://www.deezer.com/ajax/gw-light.php?method=deezer.userMenu')) {
-            let json = await resp.json()
+            const json = await resp.json()
 
             delete json.results.MARKETING_PUSH
             delete json.results.MARKETING_PUSH_DATA
@@ -215,6 +216,13 @@ unsafeWindow.fetch = (function (fetch) {
             if (typeof json.results === 'string') {
                 json.results = playerTokenPatch(json.results)
             }
+
+            resp = new Response(JSON.stringify(json), resp)
+        } else if (url.startsWith('https://www.deezer.com/ajax/gw-light.php?method=appcusto.getData')) {
+            const json = await resp.json()
+
+            // removes more upgrade popup stuff
+            json.results.events = {}
 
             resp = new Response(JSON.stringify(json), resp)
         }
