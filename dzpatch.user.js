@@ -2,7 +2,7 @@
 // @name        dzunlock
 // @namespace   https://uhwotgit.fly.dev/uhwot/dzunlock
 // @description Removes advertisements, unlocks streaming the full song length, enables Deezer Hi-Fi features
-// @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (replaced media server link)
+// @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (replaced media server link, line 168)
 // @version     1.4.6+
 // @license     GPL-3.0-only
 // @homepageURL https://github.com/Myst1cX/dzpatch
@@ -166,6 +166,7 @@ unsafeWindow.fetch = (function (fetch) {
 
             if (id >= 0 && !is_quality_available) {
                 const media_server = GM_getValue('media_server', 'https://lufts-dzmedia.fly.dev')
+                // original server link, if it gets restored: 'https://dzmedia.fly.dev' 
                 url = `${media_server}/get_url`
 
                 const body = {
@@ -230,3 +231,4 @@ unsafeWindow.fetch = (function (fetch) {
         return resp
     };
 })(unsafeWindow.fetch);
+
