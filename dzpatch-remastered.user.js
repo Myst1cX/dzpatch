@@ -2,7 +2,7 @@
 // @name        dzpatch remastered
 // @namespace   https://uhwotgit.fly.dev/uhwot/dzunlock
 // @description Removes advertisements, unlocks streaming the full song length, enables Deezer Hi-Fi features
-// @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (replaced media server link - line 168; and improved the blocking of promotional banners)
+// @author      uh wot (script author), LuftVerbot (media server owner), Myst1cX (replaced media server link - line 229; and improved the blocking of promotional banners)
 // @version     1.4.6.z
 // @license     GPL-3.0-only
 // @homepageURL https://github.com/Myst1cX/dzpatch
@@ -537,5 +537,6 @@ try {
     } catch (e) {}
   });
 })();
+
 
 
